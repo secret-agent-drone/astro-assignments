@@ -1,0 +1,188 @@
+
+\documentclass[a4paper]{article} % A4 paper and 11pt font size
+
+
+
+
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{siunitx}
+
+
+\usepackage{fancyhdr}
+\usepackage{pdflscape}
+\usepackage{bm}
+\usepackage{enumitem}
+
+\usepackage[a4paper]{geometry}
+
+\usepackage{framed}
+
+\usepackage{gensymb}
+
+
+%for side-by-side figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.2}
+
+
+\newgeometry{bottom=4cm}
+
+\begin{comment}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=40mm,
+ right=40mm,
+ top=20mm,
+ bottom=20mm,
+ }
+ \end{comment}
+
+
+%Bigger fractions (no shrinking text to fit)
+%\let\oldfrac\frac
+%\let\frac\dfrac
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+
+\pagenumbering{arabic}
+\begin{document}
+\pagestyle{empty}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{titlepage}
+
+    \begin{center}
+        \textsc{}\\[3cm]
+
+        \HRule \\[0.5cm]
+        \Huge \textbf{PHYC30019 Astrophysics}\\[0.5cm]
+        \huge \textbf{Project 1:} Something\\[0.5cm] 
+        \HRule \\[1.5cm]
+
+        \begin{minipage}{0.5\textwidth}
+        \begin{center}
+
+		\vspace{3cm}
+        \large By \\[0.75cm]
+        \begin{tabular}{rl}
+        \Large Braden &\Large \textsc{Moore} \\[0.1cm]
+        \Large Jude & \Large \textsc{Prezens} \\    
+		\end{tabular}  
+		\\[1cm]
+        \normalsize \normalfont 
+        The University of Melbourne \\[2cm]
+
+        \end{center}
+        \end{minipage}
+
+        \vfill
+
+        \large \today
+    \end{center}
+
+\newpage
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+\begin{comment}
+\pagestyle{fancy}
+\pagenumbering{gobble}
+\tableofcontents
+\newpage
+\end{comment}
+\pagenumbering{arabic}
+\rfoot{\textsc{PHYC30012 Astrophysics}}
+
+\pagestyle{fancy}
+\setcounter{page}{1}
+\section{Order-of-magnitude estimate 1}
+\begin{framed}
+Are there more grains of sand on the beaches of Earth or more stars in the Milky Way?
+\end{framed}
+
+\subsection{Grains of sand}
+We begin by estimating the number of beaches on Earth.
+\begin{align*}
+\text{no. of continents}&=7\sim 10\\
+\text{no. of beaches/continent}&\sim 10,000\\
+\Rightarrow& 100,000 \text{ beaches on Earth}
+\intertext{We then make an estimate of the average volume of a beach covered by sand.}
+\text{average length of beach}&=\SI{1000}{m}\\
+\text{average width\footnote{Width is taken as the distance from the average water level to the grassland/non-sandy area beyond the beach} of beach}&=\SI{10}{m}\\
+\text{average depth\footnote{Depth is taken as the vertical distance from surface sand to the first point below the beach surface where there is no longer sand.} of beach}&=\SI{2}{m}\\
+\Rightarrow&=\SI{20,000}{m^3}\text{ of sand per beach}
+\intertext{Next we estimate the number of grains of sand in a $\SI{1}{cm^3}$ box to be $\sim 1000$.}
+\Rightarrow &1000\text{ grains of sand/} \si{cm^3}\\
+\Rightarrow &10^3\times 10^6 \text{ grains of sand/}\si{m^3}
+\intertext{We can now estimate the number of grains of sand on the beaches of Earth as}
+\text{number of grains of sand}&\sim 100,000\text{ beaches} \times \SI{20,000}{m^3}/\text{beach}\times 10^9\text{ grains/}\si{m^3}\\
+&\sim 2\times 10^5 \times 10^5 \times 10^9 \text{ grains}\\
+&\sim 2\times 10^{19}\text{ grains}
+\end{align*}
+
+\subsection{Stars}
+We begin by determining a rough measure of volume for the Milky Way.
+\begin{align*}
+\text{diameter of Milky Way}&\sim \SI{100,000}{ly}\\
+\text{thickness of Milky Way}&\sim \SI{2,000}{ly}\\
+\Rightarrow \text{volume}&=\pi\left(\frac{\SI{100,000}{ly}}{2}\right)^2 \times \SI{2,000}{ly}\\
+&\sim \frac{6}{4}\times 10^3\left(10^5\right)^2 \si{(ly)^3}\\
+&\sim 1.5\times \SI{d13}{(ly)^3} 
+\intertext{We then estimate the average distance between stars. To do this, we take the distance from the Sun to its nearest neighbour as $\sim\SI{4}{ly}$. Using this distance we then suppose that each star exists within a ``starbox'' of dimensions $2\times 2\times \SI{2}{(ly)^3}$.}
+\text{Volume per star}&\sim \SI{8}{(ly)^3}/\text{star}\\
+\intertext{Now we can estimate the number of stars as:}
+\text{Number of stars in the Milky Way}&= \frac{\text{volume of Milky Way}}{\text{volume/star}}\\
+&\sim \frac{1.5\times 10^{13}}{8}\\
+&\sim\frac{10^{13}}{10}\\
+&= \SI{d12}{stars}
+\end{align*}
+
+\subsection{Conclusion}
+From the above, we claim that
+\begin{align*}
+\text{Number of grains of sand on the beaches of Earth}&\sim 10^{19}\\
+\text{Number of stars in the Milky Way}&\sim 10^{12}
+\end{align*}
+
+From the rough order-of-magnitude calculations performed, we deduce \emph{there are more grains of sand on the beachs of Earth than there are stars in the Milky Way}. Even though we have made many assumptions as well as liberal rounding of numbers, it is unlikely that these values are more than an order of magnitude greater or smaller than quoted. 
+
+It is validating to note that the common answer for number of stars in the Milky Way\footnote{See http://asd.gsfc.nasa.gov/blueshift/index.php/2015/07/22/how-many-stars-in-the-milky-way/} is quoted as $\sim 10^{11}$.
+
+
+\section{Research task 1}
+
+\section{Calculation 1}
+
+\section{Calculation 2}
+
+\section{Calculation 3}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
