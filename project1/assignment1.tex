@@ -365,6 +365,35 @@ Suppose the gas cloud of $\ms{d3}$ collapses under gravity and forms stars. Unde
 
 Under simple assumptions, the largest star that will form is $\ms{100}$. However this is rare, and given the clouds mass is only $\ms{1000}$, it is more likely to form a larger number of stars in the range $\ms{0.1}$ and $\ms{1}$, with a maximum in the range $\ms{0.1}-\ms{0.5}$.
 
+Now let's try some calculations.
+\begin{align*}
+\frac{dN}{dm}&\propto m^{-2.35}\\
+\Rightarrow N&=B\int^{M_{\text{max}}}_{M_{\text{min}}} m^{-2.35}~dm
+\end{align*}
+We set $M_{\text{min}}=\ms{0.1}$ a reasonable assumption for the minimum star mass, and $M_{\text{max}}=\ms{d3}$ as the maximum theoretical star mass, as that is the mass of the gas cluster. However, when we later find a maximum mass it will be lower than this. We expect all stars formed to exist within this mass range, so
+\begin{align*}
+1&=B\int^{\ms{0.1}}_{\ms{d3}}m^{-2.35}~dm\\
+&=C\int^{0.1}_{10^3}m^{-2.35}~dm
+\end{align*}
+
+Where $C=BM_\odot$. Solving this for $C$, we find 
+\begin{equation}
+C=0.163
+\end{equation}
+
+Now we repeat this integration, but setting a new lower limit and setting $N=0.01$ (that is, a mass range in which only 1\% of stars will form). By solving for the lower integral we find the mass at which 99\% of stars will form below, which we could reasonably construe as the maximum mass of stars which will form.
+
+\begin{equation}
+0.01=C\int^{\ms{d3}_{M_{\text{max}}}m^{-2.35}~dm \label{IMF max}
+\end{equation}
+
+Solving (\ref{IMF max}) for $M_{\text{max}}$ we conclude
+\begin{equation}
+M_{\text{max}}\sim \ms{500}
+\end{equation}
+
+
+
 \pagebreak
 
 \subsection{Calculation 3}
