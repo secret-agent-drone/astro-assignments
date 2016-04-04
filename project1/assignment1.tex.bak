@@ -106,12 +106,12 @@
 \newpage
 \end{titlepage}
 %----------------------------------------------------------------------------------------
-
+\begin{comment}
 \pagestyle{fancy}
 \pagenumbering{gobble}
 \tableofcontents
 \newpage
-
+\end{comment}
 \pagenumbering{arabic}
 \rfoot{\textsc{PHYC30012 Astrophysics}}
 
