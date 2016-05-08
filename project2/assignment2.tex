@@ -1,0 +1,260 @@
+\documentclass[a4paper]{article} % A4 paper and 11pt font size
+
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+%\usepackage{pgfornament}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{pdflscape}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage[a4paper]{geometry}
+\usepackage{framed}
+\usepackage{gensymb}
+
+\newcommand{\ms}[1]{\SI{#1}{M_{\odot}}}
+
+%for side-by-side figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.2}
+
+% include this to remove the "References" heading in bibliography
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+
+
+\newgeometry{bottom=4cm}
+
+\begin{comment}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=40mm,
+ right=40mm,
+ top=20mm,
+ bottom=20mm,
+ }
+ \end{comment}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+
+\pagenumbering{arabic}
+\begin{document}
+\pagestyle{empty}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{titlepage}
+
+    \begin{center}
+        \textsc{}\\[3cm]
+
+        \HRule \\[0.5cm]
+        %\pgfornament[width = 0.9\textwidth, symmetry=v]{88}\\[0.75cm]        
+        \Huge \textbf{PHYC30019 Astrophysics}\\[0.5cm]
+        \huge \textbf{Project 2:} ???\\[0.5cm] 
+        %\pgfornament[width = 0.9\linewidth]{88}\\[1.5cm]
+        \HRule \\[1.5cm]
+
+        \begin{minipage}{0.5\textwidth}
+        \begin{center}
+
+		\vspace{3cm}
+        \large By \\[0.75cm]
+        \begin{tabular}{rl}
+        \Large Cameron & \Large \textsc{French} \\ [0.1cm]
+        \Large Braden &\Large \textsc{Moore} \\
+		\end{tabular}  
+		\\[1cm]
+        \normalsize \normalfont 
+        The University of Melbourne \\[2cm]
+
+        \end{center}
+        \end{minipage}
+
+        \vfill
+
+        \large \today
+    \end{center}
+
+\newpage
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+\begin{comment}
+\pagestyle{fancy}
+\pagenumbering{gobble}
+\tableofcontents
+\newpage
+\end{comment}
+\pagenumbering{arabic}
+\rfoot{\textsc{PHYC30012 Astrophysics}}
+
+\pagestyle{fancy}
+\setcounter{page}{1}
+\section{Order-of-magnitude estimates}
+\subsection{Order-of-magnitude estimate 1}
+\begin{framed}
+The Earth's atmosphere is projected to rise by $3.5^{\circ}\text{C}$ over the next century due to the increase in CO$_2$ in the atmosphere. If the ocean temperatures were to rise by the same amount, what would be the increase in sea levels? Neglect melting of ice in this first calculation, but the second part of the calculation should now determine the rise in sea levels if all the ice in the Antarctic melted. Would it make much difference if the Arctic ice melted as well?
+\end{framed}
+
+
+\subsection{Order-of-magnitude estimate 2}
+\begin{framed}
+Estimate the annual cost of running the University of Melbourne.
+Estimate the amount of this budget provided by student fees.
+Now scale this to cover all the universities in Victoria.
+What would each Victorian have to add to their taxes to make universities free for students again.
+\end{framed}
+
+
+\subsection{Order-of-magnitude estimate 3}
+\begin{framed}
+Which is the most likely: two planets colliding; two stars colliding; or two galaxies colliding? Carefully outline the assumptions you make. You need to think carefully about the conditions required before two objects can collide.
+\end{framed}
+
+\section{Research Tasks}
+\subsection{Research Task 1}
+\begin{framed}
+What is the range that we generally consider to be IMBH? Have any been discovered?
+\end{framed}
+
+Intermediate-mass black holes are a theorised class of black holes with mass range of $10^2$ to $10^6$ solar masses~\cite{ColeMiller}. What makes this class different to stellar mass black holes is that they are too large to be formed by the collapse of a single star and as such are theorised to form via merging of two stellar mass black holes by accretion, the collapse of many stars within a dense stellar cluster, or primordial holes formed from the big bang.
+
+There are a couple of instances where teams of astronomers have found evidence for the existence of IMBHs. GCIRS 13E in 2004 said to be 1300 solar masses~\cite{S2}. However there is evidence against the existence of this IMBH~\cite{Schodel:2005qm}. Another possibility is M82 X-1 but is widely rejected~\cite{DyingStar}. Other possible IMBHs are HLX-1~\cite{AstronomersSpot} and a gas cloud CO-0.40-0.22 which has physical characteristics which simulate the existence of a $10^5$ solar mass black hole~\cite{IMBHsig}.
+
+
+\subsection{Research Task 2}
+\begin{framed}
+What is the age of the universe? How is this calculated? Is this consistent with all known observations?
+\end{framed}
+
+The most distant quasar is known as ULAS J1120+0641~\cite{QuasarHunting}. Found by use of the Bayesian comparison which is a statistical technique to sort through the data with the use of a prior known fact. This quasar is approximately seen about 800 million years after the occurrence of the big bang. The corresponding redshift is 7.1~\cite{DistantQuasar}.
+Putting this redshift into the university of Melbourne calculator[3] gives coordinates of the quasar under planck cosmology of:
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\textbf{Age at $\bm{z=0}$}:&\SI{13.81673}{Gyr}\\
+\textbf{Comoving distance}:&\SI{8857.76559}{Mpc}\\
+\textbf{Luminosity distance}:&\SI{71747.90131}{Mpc}\\
+\textbf{Angular Diameter distance}:&\SI{1093.55131}{Mpc}\\
+\textbf{Comoving volume}:&\SI{2911.12704}{(Mpc)^3}\\
+\textbf{Distance modulus}:&\SI{49.27905}{mag}\\
+\textbf{Age at $\bm{z}$}:&\SI{0.74810}{Gyr}\\
+\textbf{Lookback time}:&\SI{13.06863}{Gyr}\\
+\textbf{Comoving volume element}:&\SI{2.69578d10}{Mpc^3 dw^{-1} dz^{-1}}	
+\end{tabular}
+\caption{Quasar coordinates}
+\end{table}
+
+
+ 
+
+
+Using different cosmology will provide slightly different results in the calculator. 
+Comoving coordinates are the coordinate system used to measure distance to a point in space that factors out the expansion of the universe thus does not vary with time unlike proper distance. 
+
+
+
+\subsection{Research Task 3}
+\begin{framed}
+Read the following article – I will tell you something about Dan the author.
+
+\url{http://www.space.com/28499-finding-the-most-distant-quasar.html}
+
+What is the redshift of this object?
+
+Use the following calculator to obtain the physical coordinates of this quasar,
+
+being careful to specify the cosmology you have used.
+
+\url{http://ph.unimelb.edu.au/cosmocalc/session.php}
+\end{framed}
+
+
+\section{Calculations}
+
+\subsection{Calculation 1}
+\begin{framed}
+How long does it take to grow a $109~M_\odot$ SMBH if the growth is all by accretion onto a `seed'? Set up a basic calculation: variables you might need to consider include accretion rate, mass of the `seed', age of the universe etc. Outline any limitations on the values of these variables. A graph may help?
+\end{framed}
+
+\subsection{Calculation 2}
+\begin{framed}
+You now have the age of the most distant quasar - can you form the SMBH by accretion? What are the limitations on this method of formation? What would happen if we find a quasar at $z=8.5$?
+\end{framed}
+
+\subsection{Calculation 3}
+\begin{framed}
+One option considered, that might reduce the tight timescales, is to form IMBHs to act as seeds. In order for this to be a viable route for the formation of SMBHs, they need to form quickly, and early. In a dense environment of compact objects, objects can merge due to dynamical friction (there are some issues when they get close which we will ignore).
+
+Below is a formula for the timescale for merging, and a short paper that traces the derivation following the classic textbook, Binney and Tremaine – Galactic Dynamics is in the LMS. Specifying your assumptions, you should consider a BH of mass M in a dense environment of compact objects. A good model would be something like a globular cluster (although you should be able to work out the Jeans mass at the redshifts in question, it is sufficient to just take a globular cluster-sized object). Specify reasonable values for the cluster of objects and decide on a value for M. Work out the timescales for the mass M to merge with the central object, and discuss any issues that you think would need to be considered if you were to take this option seriously.
+\begin{align}
+t_{\text{fric}}&=\frac{1.17}{\ln \Lambda}\frac{r_i^2 v_c}{GM}\\
+&=\frac{2.64\times 10^{11}}{\ln \Lambda}\left(\frac{r_i}{\SI{2}{kpc}}\right)^2\left(\frac{v_c}{\SI{250}{km/s}}\right)\left(\frac{10^6~M_{\odot}}{M}\right)\text{yr}
+\end{align}
+Note the ‘normalising’ values are for a galaxy; a globular cluster will be much smaller.
+\end{framed}
+
+
+\section{Conclusion}
+Summarise what you have learned about the possible formation of IMBH and SMBH. Do you think the issues are resolved?
+
+
+
+
+\pagebreak
+
+\section{References}
+
+\bibliographystyle{plain}
+\bibliography{refs.bib}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
