@@ -70,7 +70,7 @@
         \HRule \\[0.5cm]
         %\pgfornament[width = 0.9\textwidth, symmetry=v]{88}\\[0.75cm]        
         \Huge \textbf{PHYC30019 Astrophysics}\\[0.5cm]
-        \huge \textbf{Project 2:} ???\\[0.5cm] 
+        \huge \textbf{Project 2:} Supermassive Black Holes\\[0.5cm] 
         %\pgfornament[width = 0.9\linewidth]{88}\\[1.5cm]
         \HRule \\[1.5cm]
 
@@ -115,20 +115,230 @@
 The Earth's atmosphere is projected to rise by $3.5^{\circ}\text{C}$ over the next century due to the increase in CO$_2$ in the atmosphere. If the ocean temperatures were to rise by the same amount, what would be the increase in sea levels? Neglect melting of ice in this first calculation, but the second part of the calculation should now determine the rise in sea levels if all the ice in the Antarctic melted. Would it make much difference if the Arctic ice melted as well?
 \end{framed}
 
+To estimate this, we use an online calculator \footnote{\url{http://antoine.frostburg.edu/chem/senese/javascript/water-density.html}} to determine water density as different temperatures. We will take the current ocean temperature as an average of $10^{\circ}$.
+
+\begin{align}
+d(T=17^{\circ})\equiv d_{\text{cold}}&=\SI{998.7779}{kg/m^3}\\
+d(T=20.5^{\circ})\equiv d_{\text{warm}}&=\SI{998.1026}{kg/m^3}
+\end{align}
+
+
+We take the volume of the ocean as $\SI{1.386d15}{m^3}$ \footnote{\url{http://water.usgs.gov/edu/gallery/global-water-volume.html}}
+
+\begin{align}
+d&=\frac{m}{V}
+\intertext{Since increasing the ocean temperature does not affect its mass, $m$ is constant}
+\Rightarrow d_{1}V_{1}&=d_{2}V_{2}\\
+\Rightarrow d_{\text{warm}}V_{\text{warm}}&=d_{\text{cold}}V_{\text{cold}}\\
+\Rightarrow V_{\text{warm}}&=V_{\text{cold}}\frac{d_{\text{cold}}}{d_{\text{warm}}}
+\intertext{We can now calculate the change in volume as}
+\Delta V \equiv V_{\text{warm}}-V_{\text{cold}}&=V_{\text{cold}}\left(\frac{d_{\text{cold}}}{d_{\text{warm}}}-1\right)\\
+&=\frac{V_{\text{cold}}}{d_{\text{warm}}}\left(d_{\text{cold}}-d_{\text{warm}}\right)\\
+&=\frac{\SI{1.386d15}{m^3}}{\SI{998.1026}{kg/m^3}}\left(998.7779-998.1026\right)\si{kg/m^3}\\
+&\sim \frac{\SI{d15}{m^3}}{\SI{d3}{kg/m^3}}\left(\SI{1}{kg/m^3}\right)\\
+&=\SI{d12}{m^3}\label{water volume}
+\end{align}
+
+To calculate the increase in sea levels, we must divide this change in volume by the surface area of the oceans. We know $\sim 71\%$ of the Earth's surface is covered by water\footnote{\url{http://water.usgs.gov/edu/earthhowmuch.html}}, and we assume that 100\% of the water is in the oceans.
+
+\begin{align}
+\text{Surface area of water}&\sim 0.71\times \text{surface area of Earth}\\
+&=0.7\times \pi\times (\SI{6d6}{m})^2\\
+&\sim \SI{80d12}{m^2}\\
+&\sim \SI{d14}{m^2}\label{water surface area}
+\end{align}
+
+Dividing~(\ref{water volume}) by~(\ref{water surface area}) we conclude
+\begin{align}
+\text{Increase in sea level}&\sim\frac{\SI{d12}{m^3}}{\SI{d14}{m}}\\
+&=\SI{d-2}{m}\\
+&=\SI{0.01}{m}\\
+&=\SI{1}{cm}\\
+\end{align}
+
+\HRule
+
+We now consider the effect of the melting Antarctic ice. There is estimated to be $\sim \SI{26.5d6}{km^3}\sim \SI{3d16}{m^3}$ of ice in the Antarctic, with density $d_{\text{ice}}=\SI{916.7}{kg/m^3}\sim \SI{900}{kg/m^3}$. We shall calculate the amount of liquid water this would produce when melted:
+\begin{align}
+d_{\text{water}}V_{\text{water}}&=d_{\text{ice}}V_{\text{ice}}\\
+\Rightarrow V_{\text{water}}&=\frac{d_{\text{ice}}}{d_{\text{water}}}V_{\text{ice}}\\
+&\sim \frac{900}{1000}\times \SI{3d16}{m^3}\\
+&=9\times 10^{-1}\times \SI{3d16}{m^3}\\
+&=\SI{2.7d16}{m^3}\\
+&\sim \SI{d16}{m^3}
+\end{align}
+
+Dividing this by~(\ref{water surface area}) as before, we find
+\begin{align}
+\text{Increase in sea level}&\sim\frac{\SI{d16}{m^3}}{\SI{d14}{m}}\\
+&=\SI{100}{m}\\
+\end{align}
+
+We see that melting the Antarctic ice would raise the sea level by around $\SI{100}{m}$. Scary!
+
+There is far less ice in the Arctic than the Antarctic - we take a liberal estimate\footnote{\url{http://psc.apl.washington.edu/research/projects/arctic-sea-ice-volume-anomaly/}} as $\sim \SI{25000}{km^3}=\SI{2.5d4}{km^3}$. This is 3 orders of magnitude less than the amount of Antarctic ice, hence also the volume of water produced. As such, melting the Arctic ice would not make much of a difference, when compared to the melting of the Antarctic ice.
 
 \subsection{Order-of-magnitude estimate 2}
 \begin{framed}
-Estimate the annual cost of running the University of Melbourne.
-Estimate the amount of this budget provided by student fees.
-Now scale this to cover all the universities in Victoria.
-What would each Victorian have to add to their taxes to make universities free for students again.
+Estimate the annual cost of running the University of Melbourne. Estimate the amount of this budget provided by student fees. Now scale this to cover all the universities in Victoria. What would each Victorian have to add to their taxes to make universities free for students again.
 \end{framed}
+
+We begin with the assumption that the costs of running a university can be divided into one of either \emph{staff}, \emph{maintenance} or \emph{utilities} cost.
+
+\subsubsection{Staff cost}
+We that the ratio of students to staff is $10:1$. Hence with $\sim 50,000$ students, we assume that $\sim 5,000$ staff are employed, with an average wage of $\sim \$100,000$ per staff. The staff cost is estimated as
+\begin{align}
+\text{Staff cost}=5,000\times\$100,000=\$5\times 10^8
+\end{align} 
+
+\subsubsection{Maintenance cost}
+To estimate maintenance cost, we find the average annual cost of maintenance on a house, then scale that up to the size of the University of Melbourne. We find a cost of $\$4,000$/house\footnote{\url{https://www.mainstreet.com/article/estimating-annual-home-maintenance-costs}}.
+
+The average house size is taken as $\SI{200}{m^2}\sim \SI{d2}{m^2}$, hence the average cost of maintenance is $\$40/\text{m}^2\sim \$10/\text{m}^2$.
+
+Taken very rough measurements of the main campus from Google Maps, we calculate the area of the university as
+\begin{align}
+\SI{1200}{m}\times \SI{560}{m}&\sim 1000\times\SI{500}{m^2}\\
+&=\SI{5d5}{m^2}\\
+&\sim \SI{d6}{m^2}
+\end{align}
+
+We now can estimate the annual cost of maintenance on the University of Melbourne as
+\begin{equation}
+\text{Maintenance cost}=\$10/\text{m}^2\times \SI{d6}{m^2}=\$10^7
+\end{equation}
+
+\subsubsection{Utilities cost}
+We assume that the annual utilities cost is comparable to annual maintenance cost. Hence 
+\begin{equation}
+\text{Utilities cost}\sim \$10^7
+\end{equation}
+
+\subsubsection{Total cost}
+We calculate total annual cost of running the University of Melbourne as
+\begin{align}
+\text{Staff cost}+\text{maintenance cost}+\text{utilities cost}&=\$(5\times 10^8+10^7+10^7)\\
+&=\$5.2\times 10^8\\
+&\sim \$6\times 10^8,\label{total cost}
+\end{align}
+which can be written in more relatable terms as \$600,000,000 or \$600 million.
+
+\subsubsection{Student fees}
+We assume the cost of each subject to be $\$1000$, and we assume on average each student will take 6 subjects a year. Hence, we have an annual income per student as
+\begin{equation}
+\$6000/\text{student}
+\end{equation}
+
+With our previous assumption of $50,000$ students, we have the total annual income from student fees as
+\begin{align}
+\text{Student fees}&=\$50,000\times 6,000\\
+&=\$3\times 10^8,\label{total fees}
+\end{align}
+or \$300,000,000 (\$300 million).
+
+\subsubsection{Taxes}
+Subtracting~(\ref{total fees}) from~(\ref{total cost}) we find the remaining money to be paid by taxes to ensure free education at the University of Melbourne as
+\begin{equation}
+\$(6-3)\times 10^8=\$3\times 10^8
+\end{equation}
+Multiplying this by $\sim 10$ major universities in Victoria, we find
+\begin{equation}
+\text{University tax}=\$3\times 10^9=\$3\text{ billion}
+\end{equation}
+
+There are $\sim 6$ million Victorians\footnote{See 2011 census}, of which we assume half are tax-payers. Therefore
+\begin{align}
+\text{University tax per tax-payer}&=\frac{\$3\times10^9}{3\times 10^6}\\
+&=\$1000
+\end{align}
+which equates to less than $\$100$ extra tax per month for free university education throughout Victoria. Nice!
 
 
 \subsection{Order-of-magnitude estimate 3}
 \begin{framed}
 Which is the most likely: two planets colliding; two stars colliding; or two galaxies colliding? Carefully outline the assumptions you make. You need to think carefully about the conditions required before two objects can collide.
 \end{framed}
+
+We assume that four main factors are involved in the probability of collision:
+\begin{itemize}
+\item Number
+\item Mass
+\item Cross-section
+\item Distance
+\end{itemize}
+
+As an order-of-magnitude approximation we say that the probability\footnote{Throughout this question, we will use $\mathcal{P}$ to denote some quantity related to the probability of collision, though it is not necessarily the probability (we are using some slight abuse of notation and language). However, the ratio $\frac{\mathcal{P}_{1}}{\mathcal{P}_{2}}$ will give us the relative likelihood of event 1 occuring over event 2 - this is the important quantity which we will calculate.}
+ of collision goes like
+\begin{equation}
+\mathcal{P}\propto \frac{\text{Number of (planets/stars/galaxies)}\times\text{mass}\times\text{cross-section}
+}{\text{[Average distance between (planets/stars/galaxies)]}^2}
+\end{equation}
+where we use $F=\frac{GMm}{r^2}$ to justify the $\frac{1}{(\text{distance})^2}$.
+
+\subsubsection{Number}
+\begin{itemize}
+\item $10^{24}$ planets in universe
+\item $10^{29}$ stars in universe
+\item $10^{13}$ galaxies in universe
+\end{itemize}
+
+\subsubsection{Mass}
+\begin{align}
+M_{\text{planet}}&=\ms{d-3}\\
+M_{\text{star}}&=\ms{1}\\
+M_{\text{galaxy}}&=\ms{d9}
+\end{align}
+
+\subsubsection{Cross section}
+\begin{align}
+\sigma_{\text{planet}}&\sim \sigma_{\text{Jupiter}}\\
+&=\pi r^2\\
+&\sim \left(\SI{d5}{km}\right)^2\\
+&=\SI{d16}{m^2}
+\end{align}
+
+\begin{align}
+\sigma_{\text{star}}&=\pi r^2\\
+&\sim \left(\SI{d6}{km}\right)^2
+\intertext{where we take the cross-section through the centre of a spherical star.}
+&=\SI{d18}{m^2}
+\end{align}
+
+\begin{align}
+\sigma_{\text{galaxy}}&=\pi r^2\\
+&\sim \pi \times \left(\SI{5d20}{m}\right)^2
+\intertext{where we take the model galaxies as flat disks.}
+&=\pi \times 25\times \SI{d40}{m^2}\\
+&=\SI{d41}{m^2}
+\end{align}
+
+\subsubsection{Distance}
+Taking only planets within the same solar system, from our solar system we estimate
+\begin{align}
+\text{Average distance between planets}&\sim \SI{5}{AU}\\
+&= 5\times \SI{150d6}{km}\\
+&\sim \SI{d12}{m}
+\end{align}
+
+Average distance between stars $\cong \SI{5}{ly}\sim \SI{d16}{m}$
+
+Average distance between galaxies $\cong \SI{110}{kpc}\sim \SI{d21}{m}$
+
+\subsubsection{Determining ratio of probabilities}
+\begin{align}
+\mathcal{P}_{\text{planet}}&\propto \frac{10^{13}\times 10^{-3}\times 10^{16}}{(10^{12})^2}\\
+&=10^{2}\\
+\mathcal{P}_{\text{star}}&\propto \frac{10^{29}\times 10^{0}\times 10^{18}}{(10^{16})^2}\\
+&\propto 10^{15}\\
+\mathcal{P}_{\text{galaxy}}&\propto \frac{10^{13}\times 10^{9}\times 10^{41}}{(10^{21})^2}\\
+&\propto 10^{21}
+\intertext{Hence we see that a collision between galaxies is the most likely;}
+\frac{\mathcal{P}_{\text{galaxy}}}{\mathcal{P}_{\text{star}}}&=\frac{10^{21}}{10^{15}}\\
+&=10^{6}
+\end{align}
+With our very crude order-of-magnitude calculations, we see that a galaxy collision is $10^6$ times more likely than a collision between two stars or between two planets.
+
+%--------------------------------------------------
 
 \section{Research Tasks}
 \subsection{Research Task 1}
@@ -138,7 +348,9 @@ What is the range that we generally consider to be IMBH? Have any been discovere
 
 Intermediate-mass black holes are a theorised class of black holes with mass range of $10^2$ to $10^6$ solar masses~\cite{ColeMiller}. What makes this class different to stellar mass black holes is that they are too large to be formed by the collapse of a single star and as such are theorised to form via merging of two stellar mass black holes by accretion, the collapse of many stars within a dense stellar cluster, or primordial holes formed from the big bang.
 
-There are a couple of instances where teams of astronomers have found evidence for the existence of IMBHs. GCIRS 13E in 2004 said to be 1300 solar masses~\cite{S2}. However there is evidence against the existence of this IMBH~\cite{Schodel:2005qm}. Another possibility is M82 X-1 but is widely rejected~\cite{DyingStar}. Other possible IMBHs are HLX-1~\cite{AstronomersSpot} and a gas cloud CO-0.40-0.22 which has physical characteristics which simulate the existence of a $10^5$ solar mass black hole~\cite{IMBHsig}.
+There are a couple of instances where teams of astronomers have found evidence for the existence of IMBHs. GCIRS 13E in 2004 said to be 1300 solar masses\footnote{\url{http://www.solstation.com/x-objects/s2.htm}}. However there is evidence against the existence of this IMBH\footnote{\url{https://arxiv.org/abs/astro-ph/0504474}}. Another possibility is M82 X-1 but is widely rejected \footnote{\url{http://www.thebunsenburner.com/news/astronomers-spot-the-very-first-intermediate-mass-black-hole/}}. Other possible IMBHs are HLX-1\footnote{\url{http://www.thebunsenburner.com/news/astronomers-spot-the-very-first-intermediate-mass-black-hole/}} and a gas cloud CO-0.40-0.22 which has physical characteristics which simulate the existence of a $10^5$ solar mass black hole\footnote{\url{http://arxiv.org/abs/1512.04661}}.
+
+%--------------------------------------------------
 
 
 \subsection{Research Task 2}
@@ -146,8 +358,45 @@ There are a couple of instances where teams of astronomers have found evidence f
 What is the age of the universe? How is this calculated? Is this consistent with all known observations?
 \end{framed}
 
-The most distant quasar is known as ULAS J1120+0641~\cite{QuasarHunting}. Found by use of the Bayesian comparison which is a statistical technique to sort through the data with the use of a prior known fact. This quasar is approximately seen about 800 million years after the occurrence of the big bang. The corresponding redshift is 7.1~\cite{DistantQuasar}.
-Putting this redshift into the university of Melbourne calculator[3] gives coordinates of the quasar under planck cosmology of:
+The best value for the age of the universe comes from combining 2015 Planck data with other external data\footnote{\url{http://arxiv.org/abs/1502.01589}}, and is given as
+\begin{equation}
+t_{0}=(13.799\pm 0.021)\times \SI{d9}{yr}
+\end{equation}
+
+This is calculated from the equation
+\begin{equation}
+t=\frac{1}{H_0}\int^{\infty}_{z}\frac{1}{(1+z)\left(\Omega_m(1+z)^3+\Omega_R(1+z)^4+\Omega_{\Lambda}\right)^{1/2}}
+~\text{d}z
+\end{equation}
+where $t$ is the age of the universe at redshift $z$. A redshift of zero corresponds to the present day, so the integral from zero to infinity would give the age of the universe. The value $H_0$ is the Hubble constant today, and the $\Omega$'s are the matter, radiation, and dark energy (cosmological constant) densities, calculated for example as
+\begin{equation}
+\Omega_m=\frac{\rho_m}{\rho_c},
+\end{equation}
+where $\rho_c$ is the critical density of the universe. 
+
+This age is consistent with all known observations. A lower limit of 11 billion years has been determined from globular clusters, and this age obviously lies within that limit. The oldest measured star, HD 140283, has the estimated age of  $14.46 \pm 0.8$ billion years; this value with uncertainty lies within the calculated age of the universed.
+
+
+
+%--------------------------------------------------
+
+\subsection{Research Task 3}
+\begin{framed}
+Read the following article – I will tell you something about Dan the author.
+
+\url{http://www.space.com/28499-finding-the-most-distant-quasar.html}
+
+What is the redshift of this object?
+
+Use the following calculator to obtain the physical coordinates of this quasar,
+
+being careful to specify the cosmology you have used.
+
+\url{http://ph.unimelb.edu.au/cosmocalc/session.php}
+\end{framed}
+
+The most distant quasar is known as ULAS J1120+0641\footnote{\url{http://www.space.com/28499-finding-the-most-distant-quasar.html}}. Found by use of the Bayesian comparison which is a statistical technique to sort through the data with the use of a prior known fact. This quasar is approximately seen about 800 million years after the occurrence of the big bang. The corresponding redshift is 7.1\footnote{\url{https://www.eso.org/public/australia/news/eso1122/}}.
+Putting this redshift into the University of Melbourne calculator\footnote{\url{http://www.ph.unimelb.edu.au/cosmocalc/session.php}} gives coordinates of the quasar under Planck cosmology of:
 
 
 \begin{table}[h]
@@ -166,42 +415,90 @@ Putting this redshift into the university of Melbourne calculator[3] gives coord
 \caption{Quasar coordinates}
 \end{table}
 
+Using different cosmology will provide slightly different results in the calculator. Comoving coordinates are the coordinate system used to measure distance to a point in space that factors out the expansion of the universe thus does not vary with time unlike proper distance. 
 
- 
-
-
-Using different cosmology will provide slightly different results in the calculator. 
-Comoving coordinates are the coordinate system used to measure distance to a point in space that factors out the expansion of the universe thus does not vary with time unlike proper distance. 
-
-
-
-\subsection{Research Task 3}
-\begin{framed}
-Read the following article – I will tell you something about Dan the author.
-
-\url{http://www.space.com/28499-finding-the-most-distant-quasar.html}
-
-What is the redshift of this object?
-
-Use the following calculator to obtain the physical coordinates of this quasar,
-
-being careful to specify the cosmology you have used.
-
-\url{http://ph.unimelb.edu.au/cosmocalc/session.php}
-\end{framed}
-
+%--------------------------------------------------
 
 \section{Calculations}
 
 \subsection{Calculation 1}
 \begin{framed}
-How long does it take to grow a $109~M_\odot$ SMBH if the growth is all by accretion onto a `seed'? Set up a basic calculation: variables you might need to consider include accretion rate, mass of the `seed', age of the universe etc. Outline any limitations on the values of these variables. A graph may help?
+How long does it take to grow a $\ms{d9}$ SMBH if the growth is all by accretion onto a `seed'? Set up a basic calculation: variables you might need to consider include accretion rate, mass of the `seed', age of the universe etc. Outline any limitations on the values of these variables. A graph may help?
 \end{framed}
+
+We begin with the Eddington luminosity\footnote{\emph{Astrophysics in a Nutshell}, p. 105}:
+\begin{equation}
+L_{\text{Edd}}=\frac{4\pi GMcm_p}{\sigma_{T}}
+\end{equation}
+where $m_p$ is the proton mass and $\sigma_T$ is the Thomson scattering cross-section\footnote{\url{http://physics.nist.gov/cgi-bin/cuu/Value?sigmae} gives $\sigma_T=\SI{6.652d-29}{m^2}$.}. The Eddington luminosity is the limiting luminosity for our accretion flow; the radiative force produced by the outward luminosity of an accreting object must not exceed the gravitational force pulling mass inwards. We require $F_{\text{rad}}<F_{\text{grav}}$, where
+\begin{align}
+F_{\text{rad}}&=\frac{L\sigma_T}{4\pi r^2 c}\\
+F_{\text{grav}}&=\frac{GMm_p}{r^2}
+\end{align}
+By equating these, we arrive at the Eddington luminosity above.
+
+To determine the accretion rate $\dot{M}$ we consider how this relates to luminosity. We assume that some fraction of the gravitational potential energy from the infalling mass is radiated away as luminosity. Hence we can relate luminosity to accretion rate as
+\begin{equation}
+L=\epsilon \dot{M}c^2
+\end{equation}
+where $\epsilon$ is the fraction of rest mass (i.e. energy) radiated. For black holes, we will take\footnote{\url{http://www-astro.physics.ox.ac.uk/~garret/teaching/lecture7-2012.pdf}}
+\begin{equation}
+\epsilon =0.1
+\end{equation}
+
+Now we find an expression for the accretion mass in terms of the Eddington luminosity,
+\begin{equation}
+\dot{M}_{\text{Edd}}=\frac{4\pi GMm_p}{\epsilon c\sigma_T}
+\end{equation}
+
+If we consider a $\ms{100}$ ``seed'' formed from early stars, we find that
+\begin{equation}
+\dot{M}_{\text{Edd}}(M=\ms{100})=2\times 10^{-6}~M_{\odot}/\text{yr}
+\end{equation}
+
+To form a $\ms{d9}$ mass SMBH, we must have
+\begin{align}
+\Delta M&=\ms{d9}-\ms{100}\\
+&\approx \ms{d9}\\
+\Rightarrow \Delta t&=\frac{\ms{d9}}{2\times 10^{-6}~M_{\odot}/\text{yr}}\\
+&=\SI{5d14}{yr}
+\end{align}
+
+This time is greater than the age of the universe; a $\ms{d9}$ mass SMBH could not have formed from a $\ms{100}$ seed within the universe's lifetime.
+
+
+%--------------------------------------------------
 
 \subsection{Calculation 2}
 \begin{framed}
 You now have the age of the most distant quasar - can you form the SMBH by accretion? What are the limitations on this method of formation? What would happen if we find a quasar at $z=8.5$?
 \end{framed}
+
+From Research Task 3, we find that the quasar was formed at $\SI{0.74810}{Gyr}=\SI{7.5d8}{yr}$. This has a luminosity of $\SI{6.3d13}{L_\odot}$, where the solar luminosity $L_{\odot}$ is
+\begin{equation}
+L_{\odot}=\SI{3.828d26}{W}
+\end{equation}
+
+\begin{align}
+\dot{M}_{\text{Edd}}&=\frac{L}{c^2}\\
+&=\frac{\SI{6.3d13}{L_\odot}}{c^2}\\
+&\approx \ms{400}/\text{yr}
+\end{align}
+
+By considering accretion of the quasar forming a $\ms{d9}$ SMBH, we have
+\begin{align}
+\Delta M&\approx \ms{d9}\\
+\Rightarrow \Delta t&=\frac{\ms{d9}}{400~M_{\odot}/\text{yr}}\\
+&=\SI{2.5d8}{yr}
+\end{align}
+
+Hence, a SMBH could feasibly have formed from quasars at the age of the oldest quasar!
+
+The age of the universe at $z=8.5$ is $\SI{0.58914}{Gyr}$; a quasar at this redshift could also form SMBHs via accretion.
+
+
+
+%--------------------------------------------------
 
 \subsection{Calculation 3}
 \begin{framed}
@@ -215,19 +512,41 @@ t_{\text{fric}}&=\frac{1.17}{\ln \Lambda}\frac{r_i^2 v_c}{GM}\\
 Note the ‘normalising’ values are for a galaxy; a globular cluster will be much smaller.
 \end{framed}
 
+To form IMBHs through the collapse of a globular cluster (through dynamical friction), there are a few things to consider. Firstly, the mass of the cluster must be great enough so that when it collapses onto the seed the resulting mass of the BH is of the magnitude in the range for IMBHs. Secondly, the cluster must be dense enough so that dynamical friction will cause the cluster to lose energy and collapse toward the central mass, in which the larger mass stars in the cluster are more likely to spiral toward the centre. Finally, the timescale for collapse must happen fast enough so that the larger stars in the cluster don't form supernovae, or so that the cluster itself does not get ripped apart from galactic tidal forces.
+Taking the formula,
+\begin{equation}
+t_{\text{fric}}=\frac{2.64\times 10^{11}}{\ln \Lambda}\left(\frac{r_i}{\SI{2}{kpc}}\right)^2\left(\frac{v_c}{\SI{250}{km/s}}\right)\left(\frac{10^6~M_{\odot}}{M}\right)\text{yr}
+\end{equation}
+the timescale for the dynamical friction to collapse a cluster to an object moving through it can be worked out. Taking a cluster with the characteristics of $r_i=\SI{9}{kpc}$, $v_c=\SI{150}{km/s}$ and $M=\ms{d11}$ we get\footnote{Note: normalising values used are for a galaxy.}
+\begin{align}
+t_{\text{fric}}&=\left(\frac{2.64\times 10^{11}}{10}\right)\left(\frac{9}{2}\right)^2\left(\frac{150}{250}\right)
+\left(\frac{10^6}{10^{11}}\right)\text{yr}\\
+&=\left(2.64\times 10^{10}\right)\times 20.25\times 0.6\times \SI{d-5}{yr}\\
+&=\SI{32.076d5}{yr}\\
+&=\SI{3.21d6}{yr}\\
+&=\SI{3.21}{Myr}
+\end{align}
+This number fits within the possibility of formation as greater than $\SI{10}{Myr}$ would allow the larger stars in the cluster to evolve to next stage in their cycle and also assuming that at approximately 20\% of the mass of the cluster merges together.
+
+
+
+%--------------------------------------------------
+
+
 
 \section{Conclusion}
+\begin{framed}
 Summarise what you have learned about the possible formation of IMBH and SMBH. Do you think the issues are resolved?
+\end{framed}
+The theory of IMBHs merging to form SMBHs appears to be an ideal model. However, knowing that they should theoretically exist, finding IMBHs still proves to be elusive and speculative. Forming IMBHs through globular cluster collapse through dynamical friction mathematically works and forming several through the same process to then merge to each other to form SMBHs is theoretically viable however there are many issues around it to resolve. Such as the requirements for collapse to occur and other forces and process that occur that may interfere with the formation through collapse. We have also found that SMBHs could indeed form via accretion with quasars.
 
 
+%\pagebreak
 
+%\section{References}
 
-\pagebreak
-
-\section{References}
-
-\bibliographystyle{plain}
-\bibliography{refs.bib}
+%\bibliographystyle{plain}
+%\bibliography{refs.bib}
 
 
 \end{document}

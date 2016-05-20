@@ -71,7 +71,7 @@ archivePrefix = "arXiv",
   note 		= {Accessed: 2016-08-05}
 }
 
-@article{Planck,
+@article{Ade:2015xua,
       author         = "Ade, P. A. R. and others",
       title          = "{Planck 2015 results. XIII. Cosmological parameters}",
       collaboration  = "Planck",
