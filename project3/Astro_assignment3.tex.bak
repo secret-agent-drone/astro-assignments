@@ -72,7 +72,7 @@
         \HRule \\[0.5cm]
         %\pgfornament[width = 0.9\textwidth, symmetry=v]{88}\\[0.75cm]        
         \Huge \textbf{PHYC30019 Astrophysics}\\[0.5cm]
-        \huge \textbf{Project 3:} Expansion of the Universe\\[0.5cm] 
+        \huge \textbf{Project 3:} ???\\[0.5cm] 
         %\pgfornament[width = 0.9\linewidth]{88}\\[1.5cm]
         \HRule \\[1.5cm]
 
@@ -82,7 +82,7 @@
 		\vspace{3cm}
         \large By \\[0.75cm]
         \begin{tabular}{rl}
-        \Large Tyler & \Large \textsc{Gardener} \\ [0.1cm]
+        \Large Tyler & \Large \textsc{Gardiner} \\ [0.1cm]
         \Large Braden &\Large \textsc{Moore} \\
 		\end{tabular}  
 		\\[1cm]
@@ -127,39 +127,38 @@ You should use an $H_0=\SI{70}{km/sec/Mpc}$. For the order-of-magnitude problems
 Suppose that you have been asked to find new extra-solar planets. You need to think about the techniques that you will use for these experiments. What accuracy is required to detect extra-solar planets by their astrometric wobble? By Doppler shift? Which would you expect to be easier to measure?
 \end{framed}
 
-We assume that the plane of the planet's orbit around the observed star is perpendicular to our line-of-sight.
+We assume that the plane of the  planet's orbit around the observed star is perpendicular to our line-of sight.
 
-We take the line-of-sight distance from Earth to a star as $d$, and we assume the astrometric wobble of the star due to the extrasolar planet is
+As shown in Figure \ref{wobble fig} above, we take the line-of-sight distance from Earth to a star as $d$, and we assume the astrometric wobble of the star due to the exoplanet is
 \begin{equation}
 r=R_{\text{star}},
 \end{equation}
-that is, its wobble is of order the star's radius. For small angles we can approximate $\tan\theta\approx \theta$, so that we have
-\begin{equation}
-\tan\theta \approx \theta = \frac{r}{d}
-\end{equation}
-Taking the distance to the extrasolar planet as\footnote{\emph{The Extrasolar Planet Encyclopaedia}, \href{www.exoplanet.eu}{exoplanet.eu}}
-\begin{equation}
-d \approx \SI{20}{ly}\sim \SI{10}{ly}
-\end{equation}
-and the radius of its star as\footnote{Haberreiter, M; Schmutz, W; Kosovichev, A.G., \href{http://adsabs.harvard.edu/abs/2008ApJ...675L..53H}{"Solving the Discrepancy between the Seismic and Photospheric Solar Radius"}, Astrophysical Journal 675 (1): L53-L56}
+that is, the star's radius.
+
+For small angles we can approximate $\tan\theta\approx \theta$, so that we have
 \begin{align}
-r&=R_{\odot}\\
+\tan\theta\approx \theta &= \frac{r}{d}
+\intertext{Taking the distance to the star as}
+d&\approx \SI{20}{ly}\sim \SI{10}{ly}
+\intertext{and the radius as}
+r&=M_{\odot}\\
 &\approx \SI{7.36d-8}{ly}\\
 &\sim \SI{d-7}{ly}
 \intertext{we can calculate $\theta$ as}
-\theta &= \frac{\SI{d-7}{ly}}{\SI{10}{ly}}~\text{radians}\\
+\theta &= \frac{\SI{d-7}{ly}}{\SI{10}{ly}}\\
 &=\SI{d-8}{radians}\\
 &=\SI{d-2}{arcsec}
 \end{align}
+(INCLUDE SOURCES)
 
-That is, we need an angular resolution of $\SI{d-2}{arcsec}$ to detect extrasolar planets by their astrometric wobble. The Hubble Space Telescope (HST) has an angular resolution of $\SI{0.05}{arcsec}=\SI{5d-2}{arcsec}$, which we will use as a basis for our ``most accurate'' measurement
-\footnote{\url{http://hubblesite.org/hubble_discoveries/hstexhibit/telescope/about.shtml}}. We see that it would be quite difficult to measure this astrometric wobble!
+That is, we need an angular resolution of $\SI{d-2}{arcsec}$ to detect extra-solar planets by their astronometric wobble. The Hubble Space Telescope has an angular resolution of $\SI{0.05}{arcsec}=\SI{5d-2}{arcsec}$, which we will use as a basis for our ``most accurate'' measurement
+\footnote{\url{http://hubblesite.org/hubble_discoveries/hstexhibit/telescope/about.shtml}}. We see that it would be quite difficult to measure this astronometric wobble!
 
 Now we shall investigate the Doppler shift due to wobble. We start with an expression for Doppler shift caused by the radial velocity of a star wobbling around an extrasolar planet,
 \begin{equation}
 \frac{\lambda_{\text{obs}}}{\lambda_{\text{em}}}=1+\frac{v_s}{c}\label{lambda}
 \end{equation}
-where $\lambda_{\text{obs}}$ is the observed wavelength, $\lambda_{\text{em}}$ is the wavelength of the light emitted, and $v_s$ is the (radial) velocity of the source. In this order-of-magnitude calculation we assume that the star is rotating in a plane parallel to our line-of-sight; we take the maximum radial velocity\footnote{\url{csep10.phys.utk.edu/lightcone/demo/vlab/vlab3/dopwob.html}} as $v_s\sim \SI{2.3d5}{m/s}$. We can rewrite~(\ref{lambda}) in terms of the fractional change in $\lambda$, i.e. the accuracy to which we would have to be able to measure $\lambda$ to determine radial velocity and hence detect extrasolar planets by Doppler wobble.
+where $\lambda_{\text{obs}}$ is the observed wavelength, $\lambda_{\text{em}}$ is the wavelength of the light emitted, and $v_s$ is the (radial) velocity of the source. In this order-of-magnitude calculation we assume that the star in rotating in a plane parallel to our line-of-sight; we take the maximum radial velocity\footnote{\url{csep10.phys.utk.edu/lightcone/demo/vlab/vlab3/dopwob.html}} as $v_s\sim \SI{2.3d5}{m/s}$. We can rewrite~(\ref{lambda}) in terms of the fractional change in $\lambda$, i.e. the accuracy to which we would have to be able to measure $\lambda$ to determine radial velocity and hence detect extrasolar planets by Doppler wobble.
 
 \begin{align}
 \frac{\lambda_{\text{obs}}}{\lambda_{\text{em}}}&=1+\frac{v_s}{c}\\
@@ -169,22 +168,23 @@ where $\lambda_{\text{obs}}$ is the observed wavelength, $\lambda_{\text{em}}$ i
 \Delta \lambda & \sim \frac{2.3\times 10^5}{3\times 10^8}\\
 &\sim 10^{-3}
 \end{align}
-That is, we must be able to measure wavelength to an accuracy of 1 part in $10^3$ in order to detect extrasolar planets! We expect that this is easier to measure than the astrometric wobble. This is backed up by the many extrasolar planets which have been detected by Doppler wobble.
+That is, we must be able to measure wavelength to an accuracy of 1 part in $10^3$ in order to detect extrasolar planets! We expect that this is easier to measure than the astronometric wobble. This is backed up by the many extrasolar planets which have been detected by Dopple wobble.
 
 
 \subsection{Order-of-magnitude estimate 2}
 \begin{framed}
-Many galaxies rotate. Can you actually observe the rotation of nearby galaxies over a reasonable (i.e. measurable) timescale?
+Many galaxies rotate. Can you actually observe the rotation of nearby galaxies over a reasonable (i.e. measureable) timescale?
 \end{framed}
 
 We will see if we can measure the angular displacement over a reasonable timeframe of an object in a rotating galaxy, and hence whether we can actually observe the rotation of that galaxy.
 
 We take the average speed of an object in the Solar System\footnote{\url{http://www.space.com/19915-milky-way-galaxy.html}} to be $\sim \SI{200}{km/s}$ (note this will differ with increasing distance from the center of the galaxy). We take the radius of an arbitrary galaxy as the radius of the Milky Way\footnote{\url{http://imagine.gsfc.nasa.gov/features/cosmic/milkyway_info.html}} galaxy $= \SI{7.7}{kpc}\sim \SI{10}{kpc}\sim \SI{3d17}{km}$ (however we note that the Milky Way galaxy is not an averagely sized galaxy). We will call our ``reasonable'' timescale $\SI{50}{yr}\sim \SI{10}{yr}$. 
 
-We will assume that in measuring the rotation of nearby galaxies, we are actually measuring the rotation of its components. Assuming that a star (or some other object rotating in a galaxy) travels only a negligible fraction of its orbit around the centre of the galaxy over 50 years, we approximate the distance travelled as
+We will assume that in measuring the rotation of nearby galaxies, we are actually measuring the rotation of its components. Assuming that a star (or some of object rotating in a galaxy) travels only a negligible fraction of its orbit around the centre of the galaxy over 50 years, we approximate the distance travelled as
 \begin{align}
 \text{Distance travelled}&=\SI{200}{km/s}\times \SI{50}{yr}\times\frac{\SI{3d7}{s}}{\text{yr}}\\
-&=3\times \SI{d11}{km}\\
+&=10000\times 3\times 10^7\\
+&=3\times 10^{11}\\
 &\sim \SI{d11}{km}
 \end{align}
 This leads to the fraction of the orbit travelled as
@@ -200,7 +200,7 @@ where there are $\sim \SI{d6}{arcsec}$ in a circle. Obviously, this number would
 
 As discussed in order-of-magnitude 1, the HST could probe angular resolutions of this scale, for nearby galaxies; note the angular scale would decrease as we observe more distant galaxies.
 
-\pagebreak
+
 
 \subsection{Order-of-magnitude estimate 3}
 \begin{framed}
@@ -215,12 +215,11 @@ We start by assuming that the relation between $\mathcal{P}_{\text{cluster}}$ an
 \end{equation}
 
 In equation~(\ref{probs}), $\sigma$ is the cross-sectional area of the object denoted by the subscript. The cross-section $\sigma$ is proportional to $r^2$; instead of the physical radius we will instead use the Einstein radius
-\footnote{Wyithe, S and Pindor B. 2015, ``640-612: Physical Cosmology'', \emph{PHYC90009: Physical Cosmology}, University of Melbourne, Melbourne.}
 \begin{equation}
 r \equiv \theta_{\text{ER}} \sim 2''  \left(\frac{M}{10^{12}~M_{\odot}}\right)^{1/2}\left(\frac{D}{\SI{0.3}{Gpc}}\right)^{-1/2}
 \end{equation}
 
-This radius takes the galaxy and globular clusters at cosmological distances as point-masses, and considers the effect of mass on lensing (which is more important than physical cross-section). $D$ is a constant related to distances between the source and lens, and $M$ is the mass of the lens.
+This radius takes the galaxy and globular clusters as point-masses, and considers the effect of mass on lensing (which is more important than physically cross-section).
 
 So, we find
 \begin{align}
@@ -231,31 +230,42 @@ So, we find
 &=10^{-6}
 \end{align}
 
-where we have used\footnote{$M_{\text{cluster}}$: \url{http://relativity.livingreviews.org/Articles/lrr-2013-4/articlese2.html}}
-\footnote{$M_{\text{galaxy}}$: Kafle, P.R.; Sharma, S.; Lewis, G.F.; Bland-Hawthorn, J. (2014). ``On the Shoulders of Giants: Properties of the Stellar Halo and the Milky Way Mass Distribution''. The Astrophysical Journal 794 (1): 17. \href{www.arXiv.org/abs/1408.1787}{arXiv:1408.1787}}
+We use
 \begin{align}
 M_{\text{cluster}}&=10^6~M_{\odot}\\
 M_{\text{galaxy}}&=M_{\text{Milky Way}}=10^{12}~M_{\odot}
 \end{align}
+SOURCES.
 
-For the probability of lensing by a star of mass $M_{\odot}$, it is easy to see that
-\begin{equation}
-\frac{\mathcal{P}_{\text{star}}}{\mathcal{P}_{\text{galaxy}}}=10^{-12}
-\end{equation}
+This is actually comparable to using the physical radii,
+\begin{align}
+\frac{\mathcal{P}_{\text{cluster}}}{\mathcal{P}_{\text{galaxy}}}
+&=\frac{r^2_{\text{cluster}}}{r^2_{\text{galaxy}}}\\
+&=\frac{0.05^2}{30^2}\\
+&=3\times 10^{-6}
+\end{align}
+SOURCES.
+
+
 
 \section{Research Tasks}
 \subsection{Research Task 1}
 \begin{framed}
-When we consider the fluctuations in the CMB, we usually plot a power spectrum to describe the scales where there is most power. Describe the physical quantities that are measured on the two axes of the typical plot of the fluctuations - a full explanation is expected. Then describe the physical interpretation of the two main peaks in the plots.
+When we consider the fluctuations in the CMB, we usually plot a power spectrum to describe the scales where there is most power. Describe the physical quantities that are measured on the two axes of the typical plot of the fluctuations – a full explanation is expected. Then describe the physical interpretation of the two main peaks in the plots.
 \end{framed}
 
-The $x$-axis of the plot of fluctuations is measured in multipole moments. The multipole moment is inversely proportional to the angular scale, meaning that as the multipole moment increases, the angular scale decreases. The angular scale refers to the size of the angle on the sky ($\theta \sim \frac{1}{l}$). The $y$-axis of the CMB power spectrum measures the fluctuation in temperature for a specific angular scale. The fluctuation in temperature ($\Delta T$) is measured in microKelvin ($\mu K$) .
+The $x$-axis of the plot of fluctuations is masured in multipole moments. The multiploe moment is inversely proportional to the angular scale, meaning that as the multiple moment increases, the angular scale decreases. The angular sclae simply referts to the size of the angle on the sky. The $y$-axis of the CMB power spectrum measures the fluctuation in temperature for a specific angular scale. The fluctation in temperature ($\Delta T$) is measured in microKelvin ($\mu K$).
 
-The first peak in the CMB power spectrum is due to the compression of a large region that reaches its maximum compression at the time of decoupling. It also shows the size of hot and cold spots due to this. The most important feature, the angular location of the first peak, is important in determing the geometry of the universe (indicated to be spatially flat).
+The first peak in the CMB power spectrum is due to the compression of a large region that reaches its maximum compression at the time of decoupling (STUART'S NOTE). It also shows the size of hot and cold spots ue to this. The most important feature, the angular location of the peak peak, is the geometry of the universe, which is indictated to be spatially flat.
 
-The ratio of the second peak amplitude to the first peak amplitude tells us about the ratio of baryon density to the critical density for baryons ($\Omega_b$)\footnote{www.background.uchicago.edu/~whu/intermediate/summary.html} \footnote{\url{www.astro.umd.edu/~miller/teaching/astr422/lecture21.pdf}} \footnote{Wyithe, S and Pindor B. 2015, ``640-612: Physical Cosmology'', \emph{PHYC90009: Physical Cosmology}, University of Melbourne, Melbourne.}.
+The ratio of the second peak amplitude to the first peak amplitude tells us about the ration of baryon density to the critial density for baryons ($\Omega_b$) \textbf{this is actually baryon energy density, not critical density}.
 
-\pagebreak
+SOURCES:
+\url{background.uchicago.edu/~whu/intermediate/summary.html}
+
+\url{www.astro.umd.edu/~miller/teaching/astr422/lecture21.pdf}
+
+
 \section{Calculations}
 
 \subsection{Calculation 1}
@@ -271,13 +281,13 @@ value and the subscripts $r$, $m$ and $\Lambda$ refer to radiation, matter and t
 
 We recall that the Hubble constant $H$ is related to the scale factor $R(t)$ as
 \begin{equation}
-H(t)=\frac{\dot{R}(t)}{R(t)}
+\frac{\dot{R(t)}}{R(t)}
 \end{equation}
 where the dot represents a derivative with respect to time. So, we can write the Friedman equation in terms of $R$ by
 \begin{align}
 \frac{H^2}{H_0^2}&=\frac{\Omega_{r,0}}{R^4}+\frac{\Omega_{m,0}}{R^3}
 +\Omega_{\Lambda,0}+\frac{1-\Omega_{0}}{R^2}\\
-\Rightarrow \dot{R}^2&=H_0^2 R^2 \left[\frac{\Omega_{r,0}}{R^4}+\frac{\Omega_{m,0}}{R^3}
+\Rightarrow \dot{R}^2&=H_0^2 a^2 \left[\frac{\Omega_{r,0}}{R^4}+\frac{\Omega_{m,0}}{R^3}
 +\Omega_{\Lambda,0}+\frac{1-\Omega_{0}}{R^2}\right]\\
 \Rightarrow \dot{R}&= H_0\left[\frac{\Omega_{r,0}}{R^2}+\frac{\Omega_{m,0}}{R}+\Omega_{\Lambda,0}R^2 + (1-\Omega_0)\right]^{1/2}\label{dot a}
 \end{align}
@@ -306,12 +316,12 @@ From this, we can determine when dark energy begins to dominate the expansion of
 
 For all smaller redshifts, dark energy should be the dominant factor in the expansion of the universe (though not exactly, since we have neglected the radiation component, even though it is very small). 
 
-Taking the end of the matter-dominated era as $\SI{9.8d9}{yr}$\footnote{Ryden, Barbara, ``Introduction to Cosmology'', 2006}, we can compare redshifts to see whether our answer is feasible.
-\begin{comment},eqn. 6.33\end{comment}
+Taking the end of the matter-dominated era as $\SI{9.8d9}{yr}$\footnote{Ryden, Barbara, ``Introduction to Cosmology'', 2006, eqn. 6.33}, we can compare redshifts to see whether out answer is feasible.
+
 In the dark matter-dominated era,
 \begin{align}
 R&\propto e^{H_0 t}
-\intertext{Today we have $R=1$ and $t=t_0$; recalling $t_0=\frac{1}{H_0}$ we have}
+\intertext{Today we has $R=1$ and $t=t_0$; recalling $t_0=\frac{1}{H_0}$ we have}
 1&=Ae^{H_0 t_0}=Ae\\
 \Rightarrow A&=e^{-1}\\
 \Rightarrow R_{\text{matter-dark matter equality}}&=e^{H_0 t - 1}\\
@@ -324,13 +334,15 @@ R&\propto e^{H_0 t}
 
 This is indeed close to the redshift we found in~(\ref{dm dom}), so we can justify our approximate value of $z$ calculated early to being around the redshift of the beginning of the dark energy-dominated era.	
 
-\pagebreak
+
 \subsection{Calculation 2}
 \begin{framed}
 For the cosmology given above, use the calculator from the previous workshop to determine the redshift where a galaxy of a standard size has the smallest angular extent or size.
 
 \url{http://www.ph.unimelb.edu.au/cosmocalc/session.php}
 \end{framed}
+
+SOURCE:
 
 Angular size is given by\footnote{\url{https://ned.ipac.caltech.edu/level5/March02/Sahni/Sahni4_5.html}}
 \begin{equation}
@@ -347,25 +359,24 @@ A minimum in angular size occurs at $z=0.75$. In Figure \ref{fig:angular size} b
 \label{fig:angular size}
 \end{figure}
 
-\pagebreak
 
 \subsection{Calculation 3}
 \begin{framed}
-Consider the surface brightness of a galaxy. How is it defined? Now explain how surface brightness changes as a function of distance in a Euclidean, non-expanding universe. How does surface brightness change in an expanding FRW universe?
+Consider the surface brightness of a galaxy. How is it defined? Now explain how surface brightness changes as a function of distance in a Euclidean, nonexpanding universe. How does surface brightness change in an expanding FRW universe?
 
 What conclusions can you draw about the observations of very distant galaxies?
 \end{framed}
 
-The surface brightness is the measured brightness for a specific area on an extended object (e.g. a galaxy). In a Euclidean, non-expanding universe, surface brightness is constant with distance. As distance increases and the brightness fades, the area begin observed also decreases at the same rate.
+The surface brightness is the measured brightness for a specific area on an extended object (e.g. a galaxy). In a Eucllddiean, non-expanindg universe, surface brightness is constant with distance. As distance increases and the brightness fades, the area begin observed also decreases at the same rate.
 
-Flux decreases with the square of the distance, but so does area. So, these values cancel out and the surface brightness is not affected. However, flux is reduced by 2 factors of $(1+z)$, one factor due to time dilation in the photon arrival time, and the other factor due to redshift.
+Flux decreases with the square of the distance, but so does area. So, these values cancel out and the surface brightness is not affected. However, flux is reduced by 2 factors of $(1+z)$, one factor due to time dilation in the photon arrival time, and the other factor for redshift.
 
-In a Euclidean, non-expanding universe,\footnote{Sparke, L.; Gallagher, J. (2000). \emph{Galaxies in the Universe: An Introduction (1st ed.)}. Cambridge University Press.}
+In a Euclidean, non-expanding universe,
 \begin{align}
 \text{Surface brightness}\equiv \text{SB}&=m+2.5\log_{10}(A)\\
 m&=-2.5\log_{10}(f_E)
 \end{align}
-where $f_E=\frac{\text{flux}}{\text{reference flux}}$. In an expanding universe,
+where $f_E=\frac{\text{flux}}{\text{relative flux}}$. In an expanding universe,
 \begin{align}
 f&=\frac{f_E}{(1+z)^2}
 \intertext{from lecture notes. Hence,}
@@ -378,27 +389,22 @@ f&=\frac{f_E}{(1+z)^2}
 \end{align}
 
 
-\pagebreak
 
 \section{Conclusion}
 \begin{framed}
 You have considered some of the changes in observables in different FRW cosmologies. Which observations do you think might be easiest to undertake to measure the curvature of the universe accurately?
 \end{framed}
 
-Measuring the CMB power spectrum gives us a very powerful insight into the universe, its properties and its evolution. By measuring the locations of the peaks (even just the first peak) we can compare prediction with experiment. Below  are several figures from \emph{Dodelson} (2000)\footnote{Dodelson, S. (2003) \emph{Modern Cosmology}. San Diego, California: Academic Press.} 
+\url{http://map.gsfc.nasa.gov/mission/sgoals_parameters_geom.html}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.7\textwidth]{images/curvature.png}
-\end{figure}
 
-The figures below show how measured angular scale depends on the curvature of the universe. Therefore if we know the expected angle between two points, we can infer curvature from the actual measurement.
 
-\begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{images/flat-universe.png}
-\includegraphics[width=0.55\textwidth]{images/open-universe.png}
-\end{figure}
+\pagebreak
 
+\section{References}
+
+\bibliographystyle{plain}
+\bibliography{refs.bib}
 
 
 \end{document}
