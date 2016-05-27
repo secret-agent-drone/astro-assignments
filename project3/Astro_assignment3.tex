@@ -18,6 +18,8 @@
 \usepackage[a4paper]{geometry}
 \usepackage{framed}
 \usepackage{gensymb}
+\usepackage{mathtools} %for underbraces without whitespace (\mathclap{})
+
 
 \newcommand{\ms}[1]{\SI{#1}{M_{\odot}}}
 
@@ -179,12 +181,61 @@ Consider a galaxy acting as a gravitational lens. You know that the galaxy compr
 Make sure that you provide details of the criteria that you are using.
 \end{framed}
 
+We start by assuming that the relation between $\mathcal{P}_{\text{cluster}}$ and $\mathcal{P}_{\text{galaxy}}$ (where $\mathcal{P}$ is the probability of lensing a background quasar) as
+\begin{equation}
+\frac{\mathcal{P}_{\text{cluster}}}{\mathcal{P}_{\text{galaxy}}}=\frac{\sigma_{\text{cluster}}}{\sigma_{\text{galaxy}}} \label{probs}
+\end{equation}
+
+In equation~(\ref{probs}), $\sigma$ is the cross-sectional area of the object denoted by the subscript. The cross-section $\sigma$ is proportional to $r^2$; instead of the physical radius we will instead use the Einstein radius
+\begin{equation}
+r \equiv \theta_{\text{ER}} \sim 2''  \left(\frac{M}{10^{12}~M_{\odot}}\right)^{1/2}\left(\frac{D}{\SI{0.3}{Gpc}}\right)^{-1/2}
+\end{equation}
+
+This radius takes the galaxy and globular clusters as point-masses, and considers the effect of mass on lensing (which is more important than physically cross-section).
+
+So, we find
+\begin{align}
+\frac{\mathcal{P}_{\text{cluster}}}{\mathcal{P}_{\text{galaxy}}}
+&=\frac{(M_{\text{cluster}}^{1/2})^2}{(M_{\text{galaxy}}^{1/2})^2}\\
+&=\frac{M_{\text{cluster}}}{M_{\text{galaxy}}}\\
+&=\frac{10^6~M_{\odot}}{10^{12}~M_{\odot}}\\
+&=10^{-6}
+\end{align}
+
+We use
+\begin{align}
+M_{\text{cluster}}&=10^6~M_{\odot}\\
+M_{\text{galaxy}}&=M_{\text{Milky Way}}=10^{12}~M_{\odot}
+\end{align}
+SOURCES.
+
+This is actually comparable to using the physical radii,
+\begin{align}
+\frac{\mathcal{P}_{\text{cluster}}}{\mathcal{P}_{\text{galaxy}}}
+&=\frac{r^2_{\text{cluster}}}{r^2_{\text{galaxy}}}\\
+&=\frac{0.05^2}{30^2}\\
+&=3\times 10^{-6}
+\end{align}
+SOURCES.
+
+
+
 \section{Research Tasks}
 \subsection{Research Task 1}
 \begin{framed}
 When we consider the fluctuations in the CMB, we usually plot a power spectrum to describe the scales where there is most power. Describe the physical quantities that are measured on the two axes of the typical plot of the fluctuations – a full explanation is expected. Then describe the physical interpretation of the two main peaks in the plots.
 \end{framed}
 
+The $x$-axis of the plot of fluctuations is masured in multipole moments. The multiploe moment is inversely proportional to the angular scale, meaning that as the multiple moment increases, the angular scale decreases. The angular sclae simply referts to the size of the angle on the sky. The $y$-axis of the CMB power spectrum measures the fluctuation in temperature for a specific angular scale. The fluctation in temperature ($\Delta T$) is measured in microKelvin ($\mu K$).
+
+The first peak in the CMB power spectrum is due to the compression of a large region that reaches its maximum compression at the time of decoupling (STUART'S NOTE). It also shows the size of hot and cold spots ue to this. The most important feature, the angular location of the peak peak, is the geometry of the universe, which is indictated to be spatially flat.
+
+The ratio of the second peak amplitude to the first peak amplitude tells us about the ration of baryon density to the critial density for baryons ($\Omega_b$) \textbf{this is actually baryon energy density, not critical density}.
+
+SOURCES:
+\url{background.uchicago.edu/~whu/intermediate/summary.html}
+
+\url{www.astro.umd.edu/~miller/teaching/astr422/lecture21.pdf}
 
 
 \section{Calculations}
@@ -261,19 +312,79 @@ For the cosmology given above, use the calculator from the previous workshop to 
 
 \url{http://www.ph.unimelb.edu.au/cosmocalc/session.php}
 \end{framed}
-b
+
+SOURCE: \url{https://ned.ipac.caltech.edu/level5/March02/Sahni/Sahni4_5.html}
+
+Angular size is given by
+\begin{equation}
+\Delta \theta = \frac{D(1+z)^2}{d_L(z)}
+\end{equation}
+where $D$ is the proper length of an object, and $d_L$ is the luminosity distance. The proper distance is constant over all redshifts. Using the calculator provided and using the given cosmology, we run over redshift $0.05 \to 5$ in intervals of $0.05$ and use the data to determine the minimum angular size.
+
+A minimum in angular size occurs at $z=0.75$. In Figure \ref{fig:angular size} below we have plotted angular size against distance over our range of values (up to $\sim 3.75$, for illustrative purposes). We see that after reaching the minimum, angular size continues to increase.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/angular-size.png}
+\caption{Angular size}
+\label{fig:angular size}
+\end{figure}
+
+
 \subsection{Calculation 3}
 \begin{framed}
-Consider the surface brightness of a galaxy. How is it defined? Now explain how surface brightness changes as a function of distance in a Euclidean, nonexpanding universe. How does surface brightness change in an expanding FRW universe.
+Consider the surface brightness of a galaxy. How is it defined? Now explain how surface brightness changes as a function of distance in a Euclidean, nonexpanding universe. How does surface brightness change in an expanding FRW universe?
 
 What conclusions can you draw about the observations of very distant galaxies?
 \end{framed}
+
+The surface brightness is the measured brightness for a specific area on an extended object (e.g. a galaxy). In a Eucllddiean, non-expanindg universe, surface brightness is constant with distance. As distance increases and the brightness fades, the area begin observed also decreases at the same rate.
+
+Flux decreases with the square of the distance, but so does area. So, these values cancel out and the surface brightness is not affected. However, flux is reduced by 2 factors of $(1+z)$, one factor due to time dilation in the photon arrival time, and the other factor for redshift.
+
+\begin{align}
+\text{Surface brightness}\equiv\text{SB}&\propto m\\
+m & \propto -\log_{10}(\text{flux})\\
+\Rightarrow \Delta\text{SB}&\propto -\log_{10}\left(\frac{1}{(1+z)^2}\right)
+\end{align}
+
+This suggests that as redshift increases (object is further away), surface brightness decreases. Therefore distant galaxies are axctually brighter than we observe.
+
+\begin{align}
+\text{SB}&=m+ 2.5\log_{10}(A)
+\intertext{from Wikipedia.}
+m&=-2.5\log_{10}\left(\frac{f}{f_0}\right)\\
+\text{where } f&=\text{flux},\\
+f_0&=\text{reference flux}
+\end{align}
+
+\HRule
+
+In a Euclidean, non-expanding universe,
+\begin{align}
+\text{Surface brightness}\equiv \text{SB}&=m+2.5\log_{10}(A)\\
+m&=-2.5\log_{10}(f_E)
+\end{align}
+where $f_E=\frac{\text{flux}}{\text{relative flux}}$. In an expanding universe,
+\begin{align}
+f&=\frac{f_E}{(1+z)^2}
+\intertext{from lecture notes. Hence,}
+\text{SB}&=-2.5\log_{10}\left(\frac{f_E}{(1+z)^2}\right)+2.5\log_{10}(A)\\
+&=\underbrace{\left[-2.5\log_{10}(f_E)+2.5\log_{10}(A)\right]}_{\mathclap{\text{independent of distance}}}
++2.5\log_{10}\left(\frac{1}{(1+z)^2}\right)\\
+\Rightarrow \Delta \text{SB}&=2.5\log_{10}\left(\frac{1}{(1+z)^2}\right)\\
+&=2.5\log_{10}(R^2)\\
+&=5\log_{10}R
+\end{align}
+
 
 
 \section{Conclusion}
 \begin{framed}
 You have considered some of the changes in observables in different FRW cosmologies. Which observations do you think might be easiest to undertake to measure the curvature of the universe accurately?
 \end{framed}
+
+\url{http://map.gsfc.nasa.gov/mission/sgoals_parameters_geom.html}
 
 
 
